@@ -36,6 +36,9 @@ dhcpd ${INTERFACE}
 echo "Starting ntp server .."
 ntpd -4
 
+echo "Starting freeradius .."
+freeradius -X &
+
 echo "Starting HostAP daemon ..."
 hostapd /etc/hostapd.conf &
 
