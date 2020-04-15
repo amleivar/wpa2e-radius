@@ -31,7 +31,7 @@ ip addr flush dev ${INTERFACE}
 ip addr add 172.16.10.69/24 dev ${INTERFACE}
 
 echo "Starting DHCP server .."
-dhcpd ${INTERFACE}
+dhcpd ${INTERFACE} -f -d &
 
 echo "Starting ntp server .."
 ntpd -4
